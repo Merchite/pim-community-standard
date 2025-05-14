@@ -4,8 +4,11 @@ FROM php:8.1-apache
 RUN apt-get update && apt-get install -y \
     git unzip zip curl libzip-dev libicu-dev libonig-dev libxml2-dev \
     libpq-dev libjpeg-dev libpng-dev libfreetype6-dev gnupg \
+    && pecl install apcu \
+    && docker-php-ext-enable apcu \
     && docker-php-ext-install pdo pdo_mysql intl zip opcache gd xml \
     && apt-get clean
+
 
 # Enable Apache mod_rewrite
 RUN a2enmod rewrite
