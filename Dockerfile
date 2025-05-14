@@ -7,7 +7,7 @@ RUN apt-get update && apt-get install -y \
     libmagickwand-dev imagemagick \
     && pecl install apcu imagick \
     && docker-php-ext-enable apcu imagick \
-    && docker-php-ext-install pdo pdo_mysql intl zip opcache gd xml bcmath exif \
+    && docker-php-ext-install pdo pdo_mysql intl zip opcache gd xml bcmath exif pcntl \
     && apt-get clean
 
 # Enable Apache mod_rewrite
