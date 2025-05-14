@@ -10,6 +10,9 @@ RUN apt-get update && apt-get install -y \
     && docker-php-ext-install pdo pdo_mysql intl zip opcache gd xml bcmath exif pcntl \
     && apt-get clean
 
+# Increase PHP memory limit to 1 GB
+RUN echo "memory_limit=1G" > /usr/local/etc/php/conf.d/memory-limit.ini
+
 # Enable Apache mod_rewrite
 RUN a2enmod rewrite
 
