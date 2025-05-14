@@ -6,7 +6,7 @@ RUN apt-get update && apt-get install -y \
     libpq-dev libjpeg-dev libpng-dev libfreetype6-dev gnupg \
     && pecl install apcu \
     && docker-php-ext-enable apcu \
-    && docker-php-ext-install pdo pdo_mysql intl zip opcache gd xml \
+    && docker-php-ext-install pdo pdo_mysql intl zip opcache gd xml bcmath \
     && apt-get clean
 
 
