@@ -44,7 +44,7 @@ services:
       DATABASE_URL: mysql://akeneo:akeneo@db:3306/akeneo_pim
       ELASTICSEARCH_HOSTS: 'elasticsearch:9200'
     ports:
-      - "8080:80"
+      - "8081:80"
     restart: unless-stopped
 
 volumes:
