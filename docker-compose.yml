@@ -1,7 +1,7 @@
 version: "3.8"
 
 services:
-  mysql:
+  db:
     image: mysql:8.0
     container_name: akeneo-db
     environment:
@@ -29,19 +29,19 @@ services:
       - esdata:/usr/share/elasticsearch/data
     restart: unless-stopped
 
-  php:
+  akeneo:
     build:
       context: .
       dockerfile: Dockerfile
     container_name: akeneo
     depends_on:
-      - mysql
+      - db
       - elasticsearch
     volumes:
       - .:/var/www/html
     environment:
       APP_ENV: dev
-      DATABASE_URL: mysql://akeneo:akeneo@mysql:3306/akeneo_pim
+      DATABASE_URL: mysql://akeneo:akeneo@db:3306/akeneo_pim
       ELASTICSEARCH_HOSTS: 'elasticsearch:9200'
     ports:
       - "8080:80"
