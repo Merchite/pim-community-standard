@@ -55,7 +55,7 @@ services:
     depends_on:
       - akeneo_php
     ports:
-      - "80:80"
+      - "8082:80"
     volumes:
       - ./docker/nginx:/etc/nginx:ro
       - .:/var/www/html
