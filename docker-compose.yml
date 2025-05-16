@@ -57,7 +57,7 @@ services:
     ports:
       - "80:80"
     volumes:
-      - ./docker/nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./docker/nginx:/etc/nginx:ro
       - .:/var/www/html
 
 volumes:
