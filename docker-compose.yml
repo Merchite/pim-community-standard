@@ -38,7 +38,7 @@ services:
       - db
       - elasticsearch
     volumes:
-      - .:/var/www/html
+      - akdata:/var/www/html
     environment:
       APP_ENV: dev
       DATABASE_URL: mysql://akeneo:akeneo@db:3306/akeneo_pim
